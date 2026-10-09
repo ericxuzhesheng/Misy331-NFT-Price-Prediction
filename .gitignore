@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.pyc
+data/*.csv
+results/predictions.csv
+results/*.log
+!data/witches_traits.csv
+.test-tmp*/
+.runtime/

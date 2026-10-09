@@ -1,0 +1,181 @@
+{
+  "raw_rows": 9764,
+  "missing_sale_price_rows": 4868,
+  "invalid_or_nonpositive_price_rows": 0,
+  "invalid_timestamp_rows_among_priced": 0,
+  "missing_token_rows_among_priced": 0,
+  "duplicate_priced_tokens_removed": 1,
+  "eligible_unique_tokens": 4895,
+  "features": [
+    "Wonder",
+    "Wisdom",
+    "Will",
+    "Wit",
+    "Wiles",
+    "Woe",
+    "Skin Tone",
+    "Rising Sign",
+    "Eyebrows",
+    "Body Shape",
+    "Moon Sign",
+    "Hair Color",
+    "Necklace",
+    "Sun Sign",
+    "Eye Style",
+    "Eye Color",
+    "Mouth",
+    "Hat",
+    "Archetype of Power",
+    "Hair (Front)",
+    "Top",
+    "Hair (Back)",
+    "Background",
+    "Face Markings",
+    "Facewear",
+    "Hair Topper",
+    "Back Item",
+    "Earrings",
+    "Forehead Jewelry",
+    "Hair (Middle)",
+    "Mask",
+    "Outerwear"
+  ],
+  "target": "last_sale.total_price / 1e18 (ETH-equivalent units)",
+  "earliest_sale": "2021-11-07T05:01:29+00:00",
+  "latest_sale": "2022-04-21T14:34:19+00:00",
+  "median_price_eth": 0.95,
+  "max_price_eth": 12.8888,
+  "feature_missing_fraction": {
+    "Wonder": 0.0,
+    "Wisdom": 0.0,
+    "Will": 0.0,
+    "Wit": 0.0,
+    "Wiles": 0.0,
+    "Woe": 0.0,
+    "Skin Tone": 0.0,
+    "Rising Sign": 0.0,
+    "Eyebrows": 0.013891726251276814,
+    "Body Shape": 0.0,
+    "Moon Sign": 0.0,
+    "Hair Color": 0.02206332992849847,
+    "Necklace": 0.7660878447395302,
+    "Sun Sign": 0.0,
+    "Eye Style": 0.0,
+    "Eye Color": 0.0,
+    "Mouth": 0.0,
+    "Hat": 0.72829417773238,
+    "Archetype of Power": 0.0,
+    "Hair (Front)": 0.0,
+    "Top": 0.0,
+    "Hair (Back)": 0.2551583248212462,
+    "Background": 0.0,
+    "Face Markings": 0.698876404494382,
+    "Facewear": 0.6402451481103166,
+    "Hair Topper": 0.7303370786516854,
+    "Back Item": 0.5013278855975485,
+    "Earrings": 0.7107252298263534,
+    "Forehead Jewelry": 0.8907048008171604,
+    "Hair (Middle)": 0.9154239019407558,
+    "Mask": 0.95097037793667,
+    "Outerwear": 0.9472931562819203
+  },
+  "partitions": {
+    "train": {
+      "rows": 2901,
+      "start": "2021-11-07T05:01:29+00:00",
+      "end": "2022-01-22T23:45:59+00:00"
+    },
+    "validation": {
+      "rows": 998,
+      "start": "2022-01-23T00:46:43+00:00",
+      "end": "2022-02-09T23:12:37+00:00"
+    },
+    "test": {
+      "rows": 996,
+      "start": "2022-02-10T00:59:04+00:00",
+      "end": "2022-04-21T14:34:19+00:00"
+    }
+  },
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "torch": "2.14.1+cpu",
+    "matplotlib": "3.11.2"
+  },
+  "python": "3.12.14",
+  "seeds": [
+    42,
+    7,
+    2026
+  ],
+  "selection_seed": 42,
+  "selection_metric": "validation RMSLE",
+  "training_target": "log1p(price_eth); inverse expm1, floored at zero",
+  "selected_models": {
+    "Linear regression": {
+      "candidate": 0,
+      "parameters": {},
+      "epochs": null,
+      "validation_rmsle": 0.9339020521377563
+    },
+    "Ridge": {
+      "candidate": 3,
+      "parameters": {
+        "alpha": 100.0
+      },
+      "epochs": null,
+      "validation_rmsle": 0.9233944013479626
+    },
+    "SGD regression": {
+      "candidate": 1,
+      "parameters": {
+        "alpha": 0.001
+      },
+      "epochs": null,
+      "validation_rmsle": 0.927246509171899
+    },
+    "Random forest": {
+      "candidate": 0,
+      "parameters": {
+        "max_depth": 8,
+        "min_samples_leaf": 2
+      },
+      "epochs": null,
+      "validation_rmsle": 0.9229539388519185
+    },
+    "Gradient boosting": {
+      "candidate": 0,
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "l2_regularization": 1.0
+      },
+      "epochs": null,
+      "validation_rmsle": 0.9250931646488567
+    },
+    "Shallow MLP": {
+      "candidate": 1,
+      "parameters": {
+        "hidden": [
+          64
+        ],
+        "dropout": 0.1
+      },
+      "epochs": 13,
+      "validation_rmsle": 0.9091881254464855
+    },
+    "Deep MLP": {
+      "candidate": 0,
+      "parameters": {
+        "hidden": [
+          64,
+          32
+        ],
+        "dropout": 0.0
+      },
+      "epochs": 8,
+      "validation_rmsle": 0.8921313779490845
+    }
+  },
+  "runtime_seconds": 40.22
+}

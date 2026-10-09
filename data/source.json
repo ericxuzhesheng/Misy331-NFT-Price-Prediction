@@ -1,0 +1,9 @@
+{
+  "author": "Harry Wang",
+  "source": "https://www.kaggle.com/datasets/harrywang/crypto-coven",
+  "author_mirror": "https://huggingface.co/datasets/harrywang/crypto-coven",
+  "mirror_revision": "50b606e9d78a38848b8452d72072678cbeaedd05",
+  "declared_license": "mit",
+  "collected": "2022-04-21",
+  "local_origin": "MISY331 Assignment 5 data snapshot"
+}
